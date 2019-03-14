@@ -60,3 +60,10 @@
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\@title}
 \fancyfoot[C]{\thepage}
+
+\RequirePackage{xpatch} % extends etoolbox's patching commands
+
+% bibliography
+\RequirePackage[numbers, square]{natbib}
+\bibliographystyle{unsrtnat}
+\xpretocmd{\bibliography}{\pagebreak\thispagestyle{plain}}{}{}
