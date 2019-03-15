@@ -18,6 +18,7 @@
 \newcommand\affiliation[1]{\gdef \@affiliation {#1}}
 \newcommand\emailcorrections[1]{\gdef \@emailcorrections {#1}}
 \newcommand\dateupdated[1]{\gdef \@dateupdated {#1}}
+\renewcommand\abstract[1]{\gdef \@abstract {#1}}
 
 % date formatting
 \RequirePackage[english]{babel}
@@ -41,15 +42,21 @@
 		}%
 	}
 	
-	\ifdefvoid{\@affiliation}{}{%
-		\textit{\@affiliation}%
-	}
+	\ifdefvoid{\@affiliation}{}{\textit{\@affiliation}}
 	
 	\normalsize\@date
 	
-	(Updated: \@dateupdated)
-	\end{center}
-	\vspace{2ex}
+	\ifdefvoid{\@dateupdated}{}{(Updated: \@dateupdated)}
+	
+	\ifdefvoid{\@abstract}{}{%
+		\vspace{3ex}%
+		\begin{minipage}{0.8\textwidth}
+			\setlength{\parindent}{1.5em}
+			\small\@abstract
+		\end{minipage}%
+	}
+	
+	\end{center}	
 }
 
 % headers and footers
