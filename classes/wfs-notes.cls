@@ -38,7 +38,8 @@
 	
 	\large\@author%
 	\ifdefvoid{\@emailcorrections}{}{%
-		\footnote{Email corrections to \@emailcorrections\ with the subject line: ``\@title\ {\DTMsetdatestyle{versiondate}\@dateupdated}''%
+		\footnote{Email corrections to \@emailcorrections\ with the subject
+			line: ``\@title\ {\DTMsetdatestyle{versiondate}\@dateupdated}''%
 		}%
 	}
 	
