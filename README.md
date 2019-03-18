@@ -15,8 +15,10 @@ Contents
 ### Packages
 
 ### Templates
-These provide a quick starting point for new documents.
+These provide a quick starting point for new LaTeX projects.
 
+* `.gitignore`
+* `Makefile`
 * `notes.tex`
 
 Installation and Usage
