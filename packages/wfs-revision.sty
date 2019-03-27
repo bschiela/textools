@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wfs-revision}[2019/03/17]
+
+\RequirePackage{xifthen}
+
+%%%%%%%%%%%
+% options %
+%%%%%%%%%%%
+\DeclareOption{final}{% accept all changes to preview revised document
+	\PassOptionsToPackage{\CurrentOption}{changes}
+	\PassOptionsToPackage{disable}{todonotes}
+}
+\newboolean{option@initial}\setboolean{option@initial}{false}
+\DeclareOption{initial}{% reject all changes to preview unedited document
+	\setboolean{option@initial}{true}
+	\PassOptionsToPackage{disable}{todonotes}
+}
+\ProcessOptions\relax
+
+%%%%%%%%
+% body %
+%%%%%%%%
+\RequirePackage{xcolor}
+
+\RequirePackage[
+	backgroundcolor=yellow,
+	linecolor=yellow!75!black
+]{todonotes}
+
+\RequirePackage[authormarkup=none]{changes}
+\@namedef{Changes@AuthorColor}{red} % default markup color
+\ifthenelse{\boolean{option@initial}}{%
+	\renewcommand{\listofchanges}[1][\@empty]{}
+	\renewcommand{\Changes@output}[7]{%
+		\ifthenelse{\equal{#1}{highlight}}{%
+			\ifIsEmpty{#3}{\@bsphack\@esphack}{#3}%
+		}{%
+			\ifIsEmpty{#4}{\@bsphack\@esphack}{#4}%
+		}%
+	}%
+}{}

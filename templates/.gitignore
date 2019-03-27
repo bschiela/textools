@@ -6,4 +6,6 @@
 *.gz
 *.log
 *.out
+*.[sl]oc
+*.tdo
 
