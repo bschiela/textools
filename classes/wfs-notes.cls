@@ -62,6 +62,7 @@
 
 % headers and footers
 \RequirePackage{fancyhdr}
+\setlength{\headheight}{13.6pt}
 \pagestyle{fancy}
 \fancyhf{} % clear defaults
 \renewcommand\sectionmark[1]{\markboth{\S\thesection\hspace{1em}#1}{}}
