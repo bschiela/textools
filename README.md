@@ -14,6 +14,8 @@ Contents
 
 ### Packages
 
+* `wfs-revision.sty`: For revising and adding TODOs.
+
 ### Templates
 These provide a quick starting point for new LaTeX projects.
 
