@@ -1,6 +1,7 @@
 textools
 ========
-This repository contains LaTeX document classes, packages, and templates to reduce boilerplate and other overhead when making LaTeX documents.
+This repository contains LaTeX document classes, packages, and templates
+to reduce boilerplate and other overhead when making LaTeX documents.
 It aims to eliminate commonly repeated tasks by
 encapsulating frequently used commands, styles, and formats so that
 new LaTeX documents contain mostly content with minimal configuration.
@@ -16,6 +17,7 @@ Contents
 
 * `wfs-revision.sty`: For revising and adding TODOs.
 * `wfs-utils.sty`: Adds document functionality and miscellaneous features.
+* `wfs-notation.sty`: Commonly used symbols and macros for math notation.
 
 ### Templates
 These provide a quick starting point for new LaTeX projects.
