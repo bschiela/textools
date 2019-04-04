@@ -44,10 +44,10 @@ The examples assume MiKTeX 2.9.7015 installed system-wide on Windows 10.
 
 e.g. using [initexmf](https://docs.miktex.org/manual/initexmf.html),
 
-    ```bash
-    $ git clone https://github.com/bschiela/textools 'C:\Program Files\MiKTeX 2.9\tex\latex\local\textools'
-    $ initexmf --admin --update-fndb
-    ```
+```bash
+$ git clone https://github.com/bschiela/textools 'C:\Program Files\MiKTeX 2.9\tex\latex\local\textools'
+$ initexmf --admin --update-fndb
+```
 
 > **Note:** The FNDB can also be refreshed via the [MiKTeX Console](https://miktex.org/howto/miktex-console):\
 > Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Tasks > Refresh file name database
@@ -61,12 +61,12 @@ e.g. using [initexmf](https://docs.miktex.org/manual/initexmf.html),
 
 e.g.
 
-    <pre>
-    $ mkdir -p ~/texmf/tex/latex
-    $ initexmf --admin --register-root=C:\Users\<<i>username</i>>\texmf
-    $ git clone https://github.com/bschiela/textools ~/texmf/tex/latex/textools
-    $ initexmf --admin --update-fndb
-    </pre>
+<pre>
+$ mkdir -p ~/texmf/tex/latex
+$ initexmf --admin --register-root=C:\Users\<<i>username</i>>\texmf
+$ git clone https://github.com/bschiela/textools ~/texmf/tex/latex/textools
+$ initexmf --admin --update-fndb
+</pre>
 
 > **Note:** New texmf roots can also be added via the MiKTeX Console:\
 > Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Settings > Directories > +
