@@ -26,12 +26,50 @@ These provide a quick starting point for new LaTeX projects.
 * `Makefile`
 * `notes.tex`
 
-Installation and Usage
-----------------------
+Installation
+------------
 Install custom `.cls` and `.sty` files as you normally would;
 there's nothing special about the following instructions.
 
 Here are a few options.
+
+### [MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
+
+The examples assume MiKTeX 2.9.7015 installed system-wide on Windows 10.
+
+#### Option 1: MiKTeX-maintained [texmf tree](https://miktex.org/kb/texmf-roots "TEXMF root directories")
+
+1. Clone into 'local' directory in MiKTeX's texmf tree.
+2. Refresh the file name database (FNDB).
+
+e.g. using [initexmf](https://docs.miktex.org/manual/initexmf.html),
+
+    ```bash
+    $ git clone https://github.com/bschiela/textools 'C:\Program Files\MiKTeX 2.9\tex\latex\local\textools'
+    $ initexmf --admin --update-fndb
+    ```
+
+> **Note:** The FNDB can also be refreshed via the [MiKTeX Console](https://miktex.org/howto/miktex-console):\
+> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Tasks > Refresh file name database
+
+#### Option 2: User-maintained texmf tree
+
+1. Create a [TDS-compliant](https://miktex.org/kb/tds "TeX Directory Structure") texmf root.
+2. Register the root with MiKTeX.
+3. Clone into 'latex' [directory](https://miktex.org/faq/local-additions "Which is the best directory to keep my .sty files?").
+4. Refresh FNDB.
+
+e.g.
+
+    <pre>
+    $ mkdir -p ~/texmf/tex/latex
+    $ initexmf --admin --register-root=C:\Users\<<i>username</i>>\texmf
+    $ git clone https://github.com/bschiela/textools ~/texmf/tex/latex/textools
+    $ initexmf --admin --update-fndb
+    </pre>
+
+> **Note:** New texmf roots can also be added via the MiKTeX Console:\
+> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Settings > Directories > +
 
 ### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules "git submodules tutorial")
 This option is useful for development.
@@ -55,29 +93,3 @@ This option is useful for development.
     
     unless the `.cls` file is in the same directory as the `.tex` file.
     
-### [MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "MiKTeX docs: Integrating local additions")
-See also [this forum question](https://latex.org/forum/viewtopic.php?f=12&t=14802).
-
-1. Put the `.cls` file in MiKTeX's local directory, e.g. on Windows 10
-
-    > C:\Program Files\MiKTeX 2.9\tex\latex\.
-    
-    This directory can be found (and new ones added) via the GUI:
-    
-    > Start > MiKTeX 2.9 > MiKTeX Settings (Admin) > Roots
-    
-2. Refresh the file name database, e.g. from a terminal
-
-    ```bash
-    $ initexmf --update-fndb
-    ```
-    
-    or from the GUI, e.g. on Windows 10
-    
-    > Start > MiKTeX 2.9 > MiKTeX Settings (Admin) > General > Refresh FNDB.
-    
-3. Use the class name in your `.tex` file, e.g.
-
-    ```latex
-    \documentclass{wfs-notes}
-    ```
