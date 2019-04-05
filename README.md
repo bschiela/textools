@@ -41,6 +41,9 @@ Here are a few methods.
 
 ### [MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
 
+See [here](https://texfaq.org/FAQ-what-TDS 'Which tree to use')
+for trade-offs between the following options.
+
 #### Option 1: MiKTeX-maintained [texmf tree](https://miktex.org/kb/texmf-roots)
 
 1. Clone into 'local' directory in MiKTeX's texmf tree.
@@ -58,13 +61,13 @@ The FNDB can also be refreshed via the
 Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
 Tasks > Refresh file name database
 
-#### Option 2: User-maintained texmf tree
+#### Option 2: User-maintained [texmf tree](https://miktex.org/kb/texmf-roots)
 
 1. Create a [TDS-compliant](https://miktex.org/kb/tds "TeX Directory Structure")
    texmf root.
 2. Register the root with MiKTeX.
-3. Clone into 'latex'
-   [directory](https://miktex.org/faq/local-additions "Which is the best directory to keep my .sty files?").
+3. Clone into
+   ['latex' directory](https://miktex.org/faq/local-additions "Which is the best directory to keep my .sty files?").
 4. Refresh FNDB.
 
 e.g.
@@ -76,11 +79,12 @@ $ git clone https://github.com/bschiela/textools ~/texmf/tex/latex/textools
 $ initexmf --admin --update-fndb
 </pre>
 
-New texmf roots can also be added via the MiKTeX Console:\
+New texmf roots can also be added via the
+[MiKTeX Console](https://miktex.org/howto/miktex-console):\
 Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
 Settings > Directories > +
 
-### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules "git submodules tutorial")
+### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 This method is useful for development and version-tracking.
 
@@ -105,11 +109,11 @@ To use an *individual* file from the repo, use its relative path; e.g.
 > LaTeX Warning: You have requested document class 'textools/classes/wfs-notes',
 > but the document class provides 'wfs-notes'.
 
-With
-[MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
-there are better options. These will override versions installed globally via
-[previous methods](#miktex), so that document classes and packages can be used
-normally, e.g.
+With MiKTeX there are
+[better options](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions").
+These will override versions installed globally via
+[previous methods](#miktex), so that `.cls` and `.sty` files in the submodule
+can be used normally, e.g.
 
 ```latex
 \documentclass{wfs-notes}
