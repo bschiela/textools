@@ -28,14 +28,17 @@ These provide a quick starting point for new LaTeX projects.
 
 Installation
 ------------
+
+> **Note:** The examples
+> assume MiKTeX 2.9.7015 installed system-wide on Windows 10 and
+> use 'git bash' as the shell.
+
 Install custom `.cls` and `.sty` files as you normally would;
 there's nothing special about the following instructions.
 
-Here are a few options.
+Here are a few methods.
 
 ### [MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
-
-The examples assume MiKTeX 2.9.7015 installed system-wide on Windows 10.
 
 #### Option 1: MiKTeX-maintained [texmf tree](https://miktex.org/kb/texmf-roots "TEXMF root directories")
 
@@ -72,24 +75,62 @@ $ initexmf --admin --update-fndb
 > Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Settings > Directories > +
 
 ### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules "git submodules tutorial")
-This option is useful for development.
 
-1. Add this repo as a submodule of another LaTeX project:
+This method is useful for development and version-tracking.
 
-    ```bash
-    $ git submodule add https://github.com/bschiela/textools.git
-    ```
-    
-2. Use the relative path to the `.cls` file, e.g.
+Add this repo as a submodule of another LaTeX project, and
+commit the `.gitmodules` and `textools` changes:
 
-    ```latex
-    \documentclass{textools/classes/wfs-notes}
-    ```
-    
-    **Note:** This will generate the warning:
-    
-    > LaTeX Warning: You have requested document class 'textools/classes/wfs-notes',
-    but the document class provides 'wfs-notes'.
-    
-    unless the `.cls` file is in the same directory as the `.tex` file.
-    
+```bash
+$ git submodule add https://github.com/bschiela/textools
+$ git commit -a
+```
+
+Now git tracks which commit in `textools` your project depends on.
+
+To use an *individual* file from the repo, use its relative path; e.g.
+
+```latex
+\documentclass{textools/classes/wfs-notes}
+\usepackage{textools/packages/wfs-utils}
+```
+
+> **Note:** This will generate warnings, e.g.\
+> LaTeX Warning: You have requested document class 'textools/classes/wfs-notes',
+> but the document class provides 'wfs-notes'.
+
+With
+[MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
+there are better options. These will override versions installed globally via
+[previous methods](#miktex), so that document classes and packages can be used
+normally, e.g.
+
+```latex
+\documentclass{wfs-notes}
+\usepackage{wfs-suite}
+```
+
+#### Option 1: `--include-directory` command-line option
+
+Pass `--include-directory` to prepend to the search path; e.g. using
+[latexmk](https://ctan.org/pkg/latexmk "CTAN: Package latexmk")
+to build `main.tex`,
+
+```bash
+$ latexmk -pdf -pdflatex="pdflatex --include-directory=textools/classes --include-directory=textools/packages" main
+```
+
+#### Option 2: `TEXINPUTS` environment variable
+
+Set `TEXINPUTS` to prepend to the search path; e.g.
+
+```bash
+$ export TEXINPUTS="textools/classes;textools/packages"
+$ latexmk -pdf main
+```
+
+> **Note:** The path separator on Windows is `;`, *not* `:`.
+
+This also allows you to build your project from an IDE
+started within the same process.
+
