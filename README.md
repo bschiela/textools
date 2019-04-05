@@ -7,7 +7,8 @@ encapsulating frequently used commands, styles, and formats so that
 new LaTeX documents contain mostly content with minimal configuration.
 
 Contents
---------
+--------------------------------------------------------------------------------
+
 ### Document classes
 
 * `wfs-notes.cls`: For taking short-form notes.
@@ -27,7 +28,7 @@ These provide a quick starting point for new LaTeX projects.
 * `notes.tex`
 
 Installation
-------------
+--------------------------------------------------------------------------------
 
 > **Note:** The examples
 > assume MiKTeX 2.9.7015 installed system-wide on Windows 10 and
@@ -40,7 +41,7 @@ Here are a few methods.
 
 ### [MiKTeX](https://docs.miktex.org/2.9/manual/localadditions.html "Integrating local additions")
 
-#### Option 1: MiKTeX-maintained [texmf tree](https://miktex.org/kb/texmf-roots "TEXMF root directories")
+#### Option 1: MiKTeX-maintained [texmf tree](https://miktex.org/kb/texmf-roots)
 
 1. Clone into 'local' directory in MiKTeX's texmf tree.
 2. Refresh the file name database (FNDB).
@@ -52,14 +53,18 @@ $ git clone https://github.com/bschiela/textools 'C:\Program Files\MiKTeX 2.9\te
 $ initexmf --admin --update-fndb
 ```
 
-> **Note:** The FNDB can also be refreshed via the [MiKTeX Console](https://miktex.org/howto/miktex-console):\
-> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Tasks > Refresh file name database
+> **Note:** The FNDB can also be refreshed via
+> the [MiKTeX Console](https://miktex.org/howto/miktex-console):\
+> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
+> Tasks > Refresh file name database
 
 #### Option 2: User-maintained texmf tree
 
-1. Create a [TDS-compliant](https://miktex.org/kb/tds "TeX Directory Structure") texmf root.
+1. Create a [TDS-compliant](https://miktex.org/kb/tds "TeX Directory Structure")
+   texmf root.
 2. Register the root with MiKTeX.
-3. Clone into 'latex' [directory](https://miktex.org/faq/local-additions "Which is the best directory to keep my .sty files?").
+3. Clone into 'latex'
+   [directory](https://miktex.org/faq/local-additions "Which is the best directory to keep my .sty files?").
 4. Refresh FNDB.
 
 e.g.
@@ -72,7 +77,8 @@ $ initexmf --admin --update-fndb
 </pre>
 
 > **Note:** New texmf roots can also be added via the MiKTeX Console:\
-> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode > Settings > Directories > +
+> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
+> Settings > Directories > +
 
 ### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules "git submodules tutorial")
 
