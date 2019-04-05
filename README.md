@@ -53,10 +53,10 @@ $ git clone https://github.com/bschiela/textools 'C:\Program Files\MiKTeX 2.9\te
 $ initexmf --admin --update-fndb
 ```
 
-> **Note:** The FNDB can also be refreshed via
-> the [MiKTeX Console](https://miktex.org/howto/miktex-console):\
-> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
-> Tasks > Refresh file name database
+The FNDB can also be refreshed via the
+[MiKTeX Console](https://miktex.org/howto/miktex-console):\
+Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
+Tasks > Refresh file name database
 
 #### Option 2: User-maintained texmf tree
 
@@ -76,9 +76,9 @@ $ git clone https://github.com/bschiela/textools ~/texmf/tex/latex/textools
 $ initexmf --admin --update-fndb
 </pre>
 
-> **Note:** New texmf roots can also be added via the MiKTeX Console:\
-> Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
-> Settings > Directories > +
+New texmf roots can also be added via the MiKTeX Console:\
+Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
+Settings > Directories > +
 
 ### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules "git submodules tutorial")
 
