@@ -27,8 +27,29 @@
 	linecolor=yellow!75!black
 ]{todonotes}
 
-\RequirePackage[authormarkup=none]{changes}
+% changes
+%%%%%%%%%%%
+\PassOptionsToPackage{authormarkup=none}{changes}
+
+% changes.sty \comment macro clashes with comment.sty comment environment
+\@ifpackageloaded{comment}{
+	\let\wfs@comment@comment\comment
+	\let\comment\@undefined
+	
+	\RequirePackage{changes}
+	\let\wfs@changes@comment\comment
+	\let\comment\@undefined
+	
+	\newcommand\comment{%
+		\ifthenelse{\equal{\@currenvir}{comment}}
+			{\wfs@comment@comment}
+			{\wfs@changes@comment}%
+	}
+}{\RequirePackage{changes}}
+
 \@namedef{Changes@AuthorColor}{red} % default markup color
+
+% option 'initial'
 \ifthenelse{\boolean{option@initial}}{%
 	\renewcommand{\listofchanges}[1][\@empty]{}
 	\renewcommand{\Changes@output}[7]{%
