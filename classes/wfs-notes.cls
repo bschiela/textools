@@ -72,6 +72,10 @@
 
 \RequirePackage{xpatch} % extends etoolbox's patching commands
 
+% appendices
+\RequirePackage[page]{appendix}
+\BeforeBeginEnvironment{appendices}{\clearpage}
+
 % bibliography
 \RequirePackage[numbers, square]{natbib}
 \bibliographystyle{unsrtnat}
