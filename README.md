@@ -19,6 +19,7 @@ Contents
 * `wfs-revision.sty`: For revising and adding TODOs.
 * `wfs-pdf.sty`: Adds pdf functionality and macros related to document appearance.
 * `wfs-notation.sty`: Commonly used symbols and macros for math notation.
+* `wfs-tableau.sty`: Defines tableau 10 colors.
 
 ### Templates
 These provide a quick starting point for new LaTeX projects.
