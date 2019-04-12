@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wfs-utils}[2019/04/12]
+
+\RequirePackage{xifthen}
+\RequirePackage{xpatch} % includes etoolbox and xparse
+
+% comment.sty comment environment clashes with changes.sty \comment macro
+\@ifpackageloaded{changes}{
+	\let\wfs@changes@comment\comment
+	\let\comment\@undefined
+	
+	\RequirePackage{comment}
+	\let\wfs@comment@comment\comment
+	\let\comment\@undefined
+	
+	\newcommand\comment{%
+		\ifthenelse{\equal{\@currenvir}{comment}}
+		{\wfs@comment@comment}
+		{\wfs@changes@comment}%
+	}
+}{\RequirePackage{comment}} % multi-line code comments

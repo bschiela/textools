@@ -28,9 +28,8 @@
 	\renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
 }
 
-\RequirePackage{etoolbox} % conditional statements
-
 % maketitle
+\RequirePackage{etoolbox} % conditional statements
 \renewcommand\maketitle{%
 	\thispagestyle{plain}%
 	\begin{center}
@@ -70,8 +69,6 @@
 \fancyhead[R]{\@title}
 \fancyfoot[C]{\thepage}
 
-\RequirePackage{xpatch} % extends etoolbox's patching commands
-
 % appendices
 \RequirePackage[page]{appendix}
 \BeforeBeginEnvironment{appendices}{\clearpage}
@@ -79,6 +76,7 @@
 % bibliography
 \RequirePackage[numbers, square]{natbib}
 \bibliographystyle{unsrtnat}
+\RequirePackage{xpatch} % extends etoolbox's patching commands
 \xpretocmd{\bibliography}{\pagebreak\thispagestyle{plain}}{}{}
 
 % captions
