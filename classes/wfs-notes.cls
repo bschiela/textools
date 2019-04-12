@@ -80,3 +80,8 @@
 \RequirePackage[numbers, square]{natbib}
 \bibliographystyle{unsrtnat}
 \xpretocmd{\bibliography}{\pagebreak\thispagestyle{plain}}{}{}
+
+% captions
+\RequirePackage{caption}
+\captionsetup{margin=0.05\textwidth, font=small, labelfont=bf}
+%\RequirePackage{subcaption}

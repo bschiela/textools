@@ -22,3 +22,11 @@
 \RequirePackage{framed}
 
 \RequirePackage{comment}
+
+% page skipping
+\RequirePackage{etoolbox}
+\newcommand*\skippage[1][\@nil]{
+	\newpage\null%
+	\ifblank{#1}{}{\thispagestyle{#1}}%
+	\newpage%
+}

@@ -13,8 +13,26 @@
 \RequirePackage{bm} % bold math symbols (e.g. greek letters)
 \RequirePackage{nth} % 1st, 2nd, etc.
 
-% default notation
-\newcommand\hc[1]{#1^\dagger} % Hermitian conjugate
-\newcommand\id{\mathds{1}} % identity operator
-\newcommand\reals{\mathbb{R}} % set of real numbers
-\renewcommand{\vec}{\bm} % boldfaced vectors
+% sets
+\newcommand*\naturals{\mathbb{N}}
+\newcommand*\integers{\mathbb{Z}}
+\newcommand*\reals   {\mathbb{R}}
+\newcommand*\complex {\mathbb{C}}
+
+% vectors
+\renewcommand*\vec    {\bm}
+\newcommand  *\uvec[1]{\hat{#1}} % unit vectors
+
+% operators
+\newcommand*\vop[1]  {\hat{\vec{#1}}} % vector operators
+\newcommand*\hc[1]   {#1^\dag} % Hermitian conjugate
+\newcommand*\id      {\mathds{1}} % identity operator
+\newcommand*\pauli[1]{\sigma_{#1}}
+\newcommand*\paulivec{\vop{\sigma}}
+\newcommand*\tensor  {\otimes}
+
+% proofs
+\newcommand*\defined\triangleq
+\newcommand*\QED    \blacksquare
+
+\newcommand*\mean[1]{\bar{#1}}
