@@ -17,7 +17,7 @@ Contents
 ### Packages
 
 * `wfs-revision.sty`: For revising and adding TODOs.
-* `wfs-utils.sty`: Adds document functionality and miscellaneous features.
+* `wfs-pdf.sty`: Adds pdf functionality and macros related to document appearance.
 * `wfs-notation.sty`: Commonly used symbols and macros for math notation.
 
 ### Templates
