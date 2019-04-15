@@ -21,6 +21,7 @@ Contents
 * `wfs-notation.sty`: Commonly used symbols and macros for math notation.
 * `wfs-tableau.sty`: Defines tableau 10 colors.
 * `wfs-utils.sty`: Extends LaTeX code features and functionality.
+* `wfs-suite.sty`: Wraps all packages in this set.
 
 ### Templates
 These provide a quick starting point for new LaTeX projects.
