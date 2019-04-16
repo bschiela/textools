@@ -1,8 +1,22 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wfs-suite}[2019/04/15]
 
+%%%%%%%%%%%
+% options %
+%%%%%%%%%%%
+
+\newif\if@option@draft\@option@draftfalse
+\DeclareOption{draft}{\@option@drafttrue}
+
+\ProcessOptions\relax
+
 \RequirePackage{wfs-utils}
 \RequirePackage{wfs-pdf}
-\RequirePackage{wfs-revision}
 \RequirePackage{wfs-notation}
 \RequirePackage{wfs-tableau}
+
+% wfs-revision
+%%%%%%%%%%%%%%%%
+\if@option@draft
+	\RequirePackage{wfs-revision}
+\fi
