@@ -3,7 +3,11 @@
 
 \LoadClass[11pt]{article} % base class
 
-% no options yet
+%%%%%%%%%%%
+% options %
+%%%%%%%%%%%
+\DeclareOption{wfs-draft}{\PassOptionsToPackage{draft}{wfs-suite}}
+
 \DeclareOption*{\OptionNotUsed}
 \ProcessOptions\relax
 
