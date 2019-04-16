@@ -9,6 +9,7 @@
 \DeclareOption{draft}{\@option@drafttrue}
 \DeclareOption{final}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}
 \DeclareOption{initial}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}
+\DeclareOption{nostamp}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}
 
 \ProcessOptions\relax
 
@@ -20,9 +21,4 @@
 \RequirePackage{wfs-pdf}
 \RequirePackage{wfs-notation}
 \RequirePackage{wfs-tableau}
-
-% wfs-revision
-%%%%%%%%%%%%%%%%
-\if@option@draft
-	\RequirePackage{wfs-revision}
-\fi
+\if@option@draft\RequirePackage{wfs-revision}\fi

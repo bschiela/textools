@@ -9,12 +9,15 @@
 \DeclareOption{final}{% accept all changes to preview revised document
 	\PassOptionsToPackage{\CurrentOption}{changes}
 	\PassOptionsToPackage{disable}{todonotes}
+	\PassOptionsToPackage{nostamp}{draftwatermark}
 }
 \newboolean{option@initial}\setboolean{option@initial}{false}
 \DeclareOption{initial}{% reject all changes to preview unedited document
 	\setboolean{option@initial}{true}
 	\PassOptionsToPackage{disable}{todonotes}
+	\PassOptionsToPackage{nostamp}{draftwatermark}
 }
+\DeclareOption{nostamp}{\PassOptionsToPackage{\CurrentOption}{draftwatermark}}
 \ProcessOptions\relax
 
 %%%%%%%%
@@ -60,3 +63,14 @@
 		}%
 	}%
 }{}
+
+% draftwatermark
+%%%%%%%%%%%%%%%%%%
+\RequirePackage[firstpage]{draftwatermark}
+\RequirePackage{calculator}
+\LENGTHDIVIDE{\paperheight}{\paperwidth}{\soln}
+\ARCTAN{\soln}{\soln}
+\RADtoDEG{\soln}{\watermarkdegrees}
+\SetWatermarkAngle{\watermarkdegrees}
+\SetWatermarkScale{10}
+\SetWatermarkColor{red!50!gray!3!white}
