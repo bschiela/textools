@@ -7,8 +7,14 @@
 
 \newif\if@option@draft\@option@draftfalse
 \DeclareOption{draft}{\@option@drafttrue}
+\DeclareOption{final}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}
+\DeclareOption{initial}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}
 
 \ProcessOptions\relax
+
+%%%%%%%%
+% body %
+%%%%%%%%
 
 \RequirePackage{wfs-utils}
 \RequirePackage{wfs-pdf}
