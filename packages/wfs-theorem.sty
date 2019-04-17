@@ -1,0 +1,35 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{wfs-theorem}[2019/04/16]
+
+\RequirePackage{amsthm}
+\RequirePackage{etoolbox}
+\RequirePackage{framed}
+
+\@ifclassloaded{book}{\newcommand*\toplevelsection{chapter}}{}
+\@ifclassloaded{report}{\newcommand*\toplevelsection{chapter}}{}
+\@ifclassloaded{article}{\newcommand*\toplevelsection{section}}{}
+
+% theorem
+%%%%%%%%%%%
+\newtheoremstyle{theorem}% name
+	{-\parskip}% space above
+	{0ex}% space below
+	{}% body font
+	{}% indent size
+	{\bfseries}% head font
+	{:}% head punctuation
+	{0.5em}% head-body space
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% head spec
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[\toplevelsection]
+
+\BeforeBeginEnvironment{theorem}{\vspace{0.5\baselineskip}}
+\AtBeginEnvironment{theorem}{\begin{framed}}
+\AtEndEnvironment{theorem}{\end{framed}}
+\AfterEndEnvironment{theorem}{\vspace{0.5\baselineskip}\vspace{-\parskip}}
+
+% proof
+%%%%%%%%%
+\RequirePackage{wfs-notation}
+\renewcommand\qedsymbol{\ensuremath{\QED}}

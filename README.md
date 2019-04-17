@@ -22,6 +22,7 @@ Contents
 * `wfs-tableau.sty`: Defines tableau 10 colors.
 * `wfs-utils.sty`: Extends LaTeX code features and functionality.
 * `wfs-suite.sty`: Wraps all packages in this set.
+* `wfs-theorem.sty`: Provides environments for theorems, proofs, definitions, etc.
 
 ### Templates
 These provide a quick starting point for new LaTeX projects.
