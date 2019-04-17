@@ -14,7 +14,7 @@
 	headfont=\bfseries,
 	notefont=\bfseries,
 	bodyfont=\normalfont,
-	headpunct=:,
+	headpunct=.,
 	postheadspace=0.5em,
 ]{theorem}
 \declaretheorem[
@@ -29,6 +29,23 @@
 	}
 ]{theorem}
 
+% definition
+%%%%%%%%%%%%%%
+\declaretheoremstyle[
+	spaceabove=2ex,
+	spacebelow=2ex,
+	headfont=\bfseries,
+	notefont=\bfseries,
+	bodyfont=\normalfont,
+	headpunct=.,
+	postheadspace=0.5em,
+	qed=\filledQED,
+]{definition}
+\declaretheorem[
+	style=definition,
+	numberwithin=\toplevelsection,
+]{definition}
+
 % proof
 %%%%%%%%%
 \declaretheoremstyle[
@@ -37,7 +54,7 @@
 	headfont=\itshape,
 	notefont=\itshape,
 	bodyfont=\normalfont,
-	headpunct=.,
+	headpunct=:,
 	postheadspace=0.5em,
 	qed=\openQED,
 ]{proof}
