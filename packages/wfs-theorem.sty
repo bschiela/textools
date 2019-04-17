@@ -13,9 +13,9 @@
 \declaretheoremstyle[
 	headfont=\bfseries,
 	notefont=\bfseries,
+	bodyfont=\normalfont,
 	headpunct=:,
 	postheadspace=0.5em,
-	bodyfont=\normalfont
 ]{theorem}
 \declaretheorem[
 	style=theorem,
@@ -25,7 +25,7 @@
 		rulecolor=black,
 		bgcolor=white,
 		textwidth=0.95\linewidth,
-		margin=0.025\linewidth
+		margin=0.025\linewidth,
 	}
 ]{theorem}
 
@@ -39,10 +39,10 @@
 	bodyfont=\normalfont,
 	headpunct=.,
 	postheadspace=0.5em,
-	qed=\openQED
+	qed=\openQED,
 ]{proof}
 \let\proof\@undefined
 \declaretheorem[
 	style=proof,
-	numbered=no
+	numbered=no,
 ]{proof}
