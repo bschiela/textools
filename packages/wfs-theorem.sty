@@ -2,6 +2,7 @@
 \ProvidesPackage{wfs-theorem}[2019/04/16]
 
 \RequirePackage{amsthm, thmtools}
+\RequirePackage{wfs-notation}
 
 \@ifclassloaded{book}{\newcommand*\toplevelsection{chapter}}{}
 \@ifclassloaded{report}{\newcommand*\toplevelsection{chapter}}{}
@@ -30,9 +31,6 @@
 
 % proof
 %%%%%%%%%
-\RequirePackage{wfs-notation}
-\renewcommand\qedsymbol{\ensuremath{\QED}}
-
 \declaretheoremstyle[
 	spaceabove=2ex,
 	spacebelow=2ex,
@@ -41,7 +39,7 @@
 	bodyfont=\normalfont,
 	headpunct=.,
 	postheadspace=0.5em,
-	qed=\qedsymbol
+	qed=\openQED
 ]{proof}
 \let\proof\@undefined
 \declaretheorem[
