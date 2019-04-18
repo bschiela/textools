@@ -4,9 +4,9 @@
 \RequirePackage{amsthm, thmtools}
 \RequirePackage{wfs-notation}
 
-\@ifclassloaded{book}{\newcommand*\toplevelsection{chapter}}{}
-\@ifclassloaded{report}{\newcommand*\toplevelsection{chapter}}{}
-\@ifclassloaded{article}{\newcommand*\toplevelsection{section}}{}
+\@ifclassloaded{book}{\newcommand*\toplevel{chapter}}{}
+\@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
+\@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
 
 % styles
 %%%%%%%%%%
@@ -29,9 +29,9 @@
 
 % environments
 %%%%%%%%%%%%%%%%
-\declaretheorem[style=bold+qed, parent=\toplevelsection]{definition}
+\declaretheorem[style=bold+qed, parent=\toplevel]{definition}
 
-\declaretheorem[style=bold, parent=\toplevelsection,
+\declaretheorem[style=bold, parent=\toplevel,
 	shaded={
 		rulewidth=1pt, rulecolor=black, bgcolor=white,
 		textwidth=0.95\linewidth, margin=0.025\linewidth,
