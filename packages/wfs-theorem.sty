@@ -16,9 +16,9 @@
 	bodyfont=\normalfont,
 	headpunct=.,
 	postheadspace=0.5em,
-]{theorem}
+]{bold}
 \declaretheorem[
-	style=theorem,
+	style=bold,
 	numberwithin=\toplevelsection,
 	shaded={
 		rulewidth=1pt,
@@ -40,23 +40,23 @@
 	headpunct=.,
 	postheadspace=0.5em,
 	qed=\filledQED,
-]{definition}
+]{bold+qed}
 \declaretheorem[
-	style=definition,
+	style=bold+qed,
 	numberwithin=\toplevelsection,
 ]{definition}
 
 % corollary
 %%%%%%%%%%%%%
 \declaretheorem[
-	style=definition,
+	style=bold+qed,
 	numberwithin=theorem,
 ]{corollary}
 
 % lemma
 %%%%%%%%%
 \declaretheorem[
-	style=definition,
+	style=bold+qed,
 	numberlike=theorem,
 ]{lemma}
 
@@ -71,15 +71,15 @@
 	headpunct=:,
 	postheadspace=0.5em,
 	qed=\openQED,
-]{proof}
+]{italic+qed}
 \let\proof\@undefined
 \declaretheorem[
-	style=proof,
+	style=italic+qed,
 	numbered=no,
 ]{proof}
 
 % derivation
 \declaretheorem[
-	style=proof,
+	style=italic+qed,
 	numbered=no,
 ]{derivation}
