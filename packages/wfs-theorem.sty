@@ -8,78 +8,38 @@
 \@ifclassloaded{report}{\newcommand*\toplevelsection{chapter}}{}
 \@ifclassloaded{article}{\newcommand*\toplevelsection{section}}{}
 
-% theorem
-%%%%%%%%%%%
+% styles
+%%%%%%%%%%
 \declaretheoremstyle[
-	headfont=\bfseries,
-	notefont=\bfseries,
-	bodyfont=\normalfont,
-	headpunct=.,
-	postheadspace=0.5em,
+	headfont=\bfseries, notefont=\bfseries, bodyfont=\normalfont,
+	headpunct=., postheadspace=0.5em,
 ]{bold}
-\declaretheorem[
-	style=bold,
-	numberwithin=\toplevelsection,
+
+\declaretheoremstyle[
+	headfont=\bfseries, notefont=\bfseries, bodyfont=\normalfont,
+	headpunct=., postheadspace=0.5em,
+	spaceabove=2ex, spacebelow=2ex, qed=\filledQED,
+]{bold+qed}
+
+\declaretheoremstyle[
+	headfont=\itshape, notefont=\itshape, bodyfont=\normalfont,
+	headpunct=:, postheadspace=0.5em,
+	spaceabove=2ex, spacebelow=2ex, qed=\openQED,
+]{italic+qed}
+
+% environments
+%%%%%%%%%%%%%%%%
+\declaretheorem[style=bold+qed, parent=\toplevelsection]{definition}
+
+\declaretheorem[style=bold, parent=\toplevelsection,
 	shaded={
-		rulewidth=1pt,
-		rulecolor=black,
-		bgcolor=white,
-		textwidth=0.95\linewidth,
-		margin=0.025\linewidth,
+		rulewidth=1pt, rulecolor=black, bgcolor=white,
+		textwidth=0.95\linewidth, margin=0.025\linewidth,
 	}
 ]{theorem}
+\declaretheorem[style=bold+qed, sibling=theorem]{lemma}
+\declaretheorem[style=bold+qed, parent=theorem]{corollary}
 
-% definition
-%%%%%%%%%%%%%%
-\declaretheoremstyle[
-	spaceabove=2ex,
-	spacebelow=2ex,
-	headfont=\bfseries,
-	notefont=\bfseries,
-	bodyfont=\normalfont,
-	headpunct=.,
-	postheadspace=0.5em,
-	qed=\filledQED,
-]{bold+qed}
-\declaretheorem[
-	style=bold+qed,
-	numberwithin=\toplevelsection,
-]{definition}
-
-% corollary
-%%%%%%%%%%%%%
-\declaretheorem[
-	style=bold+qed,
-	numberwithin=theorem,
-]{corollary}
-
-% lemma
-%%%%%%%%%
-\declaretheorem[
-	style=bold+qed,
-	numberlike=theorem,
-]{lemma}
-
-% proof
-%%%%%%%%%
-\declaretheoremstyle[
-	spaceabove=2ex,
-	spacebelow=2ex,
-	headfont=\itshape,
-	notefont=\itshape,
-	bodyfont=\normalfont,
-	headpunct=:,
-	postheadspace=0.5em,
-	qed=\openQED,
-]{italic+qed}
 \let\proof\@undefined
-\declaretheorem[
-	style=italic+qed,
-	numbered=no,
-]{proof}
-
-% derivation
-\declaretheorem[
-	style=italic+qed,
-	numbered=no,
-]{derivation}
+\declaretheorem[style=italic+qed, numbered=no]{proof}
+\declaretheorem[style=italic+qed, numbered=no]{derivation}
