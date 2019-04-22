@@ -3,6 +3,10 @@
 
 \RequirePackage{amsthm, thmtools}
 \RequirePackage{wfs-notation}
+\RequirePackage[capitalize, nameinlink]{cleveref}
+\newcommand{\crefrangeconjunction}{--}
+% implements mathtools's showonlyrefs in a cleveref-compatible way
+\RequirePackage{autonum}
 
 \@ifclassloaded{book}{\newcommand*\toplevel{chapter}}{}
 \@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
@@ -29,16 +33,27 @@
 
 % environments
 %%%%%%%%%%%%%%%%
-\declaretheorem[style=bold+qed, parent=\toplevel]{definition}
+\declaretheorem[style=bold+qed, parent=\toplevel,
+	Refname={Definition,Definitions},
+	refname={Def.,Defs.},
+]{definition}
 
 \declaretheorem[style=bold, parent=\toplevel,
 	shaded={
 		rulewidth=1pt, rulecolor=black, bgcolor=white,
 		textwidth=0.95\linewidth, margin=0.025\linewidth,
-	}
+	},
+	Refname={Theorem,Theorems},
+	refname={Thm.,Thms.},
 ]{theorem}
-\declaretheorem[style=bold+qed, sibling=theorem]{lemma}
-\declaretheorem[style=bold+qed, parent=theorem]{corollary}
+\declaretheorem[style=bold+qed, sibling=theorem,
+	Refname={Lemma,Lemmas},
+	refname={Lem.,Lems.},
+]{lemma}
+\declaretheorem[style=bold+qed, parent=theorem,
+	Refname={Corollary,Corollaries},
+	refname={Cor.,Cors.},
+]{corollary}
 
 \let\proof\@undefined
 \declaretheorem[style=italic+qed, numbered=no]{proof}
