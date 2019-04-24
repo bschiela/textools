@@ -6,8 +6,6 @@
 %%%%%%%%%%%
 % options %
 %%%%%%%%%%%
-\DeclareOption{wfs-draft}{\PassOptionsToPackage{draft}{wfs-suite}}
-
 \DeclareOption*{\OptionNotUsed}
 \ProcessOptions\relax
 

@@ -12,13 +12,12 @@ Contents
 ### Document classes
 
 * `wfs-notes.cls`: For taking short-form notes.
-   options: `wfs-draft`
 * `wfs-resume.cls`: For making resumes and CVs.
 
 ### Packages
 
 * `wfs-suite.sty`: Wraps all packages in this set.
-   options: `draft`, `final`, `initial`, `nostamp`
+   options: `(wfs-)draft`, `final`, `initial`, `nostamp`
 * `wfs-utils.sty`: Extends LaTeX code features and functionality.
 * `wfs-tableau.sty`: Defines tableau 10 colors.
 * `wfs-revision.sty`: For revising and adding TODOs.
