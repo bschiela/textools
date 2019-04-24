@@ -1,16 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wfs-theorem}[2019/04/24 v1.0]
 
-\RequirePackage{amsthm, thmtools}
+\RequirePackage{hyperref} % loads nameref at \begin{document}
 \RequirePackage{wfs-notation}
+\RequirePackage{amsthm, thmtools}
 \RequirePackage[capitalize, nameinlink]{cleveref}
 \newcommand{\crefrangeconjunction}{--}
 % implements mathtools's showonlyrefs in a cleveref-compatible way
 \RequirePackage{autonum}
 
-\@ifclassloaded{book}{\newcommand*\toplevel{chapter}}{}
-\@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
-\@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
+%%%%%%%%
+% body %
+%%%%%%%%
+\newcommand*\wfsnameref[1]{\nameref*{#1} (\hyperref[#1]{\cref*{#1}})}
 
 % styles
 %%%%%%%%%%
@@ -33,6 +35,10 @@
 
 % environments
 %%%%%%%%%%%%%%%%
+\@ifclassloaded{book}{\newcommand*\toplevel{chapter}}{}
+\@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
+\@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
+
 \declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Definition,Definitions},
 	refname={Def.,Defs.},
