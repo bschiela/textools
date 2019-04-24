@@ -7,5 +7,5 @@ main.pdf: main.tex
 
 clean:
 	latexmk -c -bibtex-cond1
-	rm -f *.loc *.soc *.tdo
+	rm -f *.loc *.soc *.tdo *.thm
 
