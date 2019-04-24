@@ -39,11 +39,15 @@
 ]{definition}
 
 \declaretheorem[style=bold+qed, parent=\toplevel,
-	Refname={Proposition,Propositions},
-	refname={Prop.,Props.},
-]{proposition}
+	Refname={Rule,Rules},
+	refname={Rule,Rules},
+]{rule}
 
 \declaretheorem[style=bold+qed, parent=\toplevel,
+	Refname={Axiom,Axioms},
+	refname={Ax.,Axs.},
+]{axiom}
+\declaretheorem[style=bold+qed, sibling=axiom,
 	Refname={Postulate,Postulates},
 	refname={Post.,Posts.},
 ]{postulate}
@@ -56,14 +60,31 @@
 	Refname={Theorem,Theorems},
 	refname={Thm.,Thms.},
 ]{theorem}
+\declaretheorem[style=bold, sibling=theorem,
+	shaded={
+		rulewidth=1pt, rulecolor=black, bgcolor=white,
+		textwidth=0.95\linewidth, margin=0.025\linewidth,
+	},
+	Refname={Law,Laws},
+	refname={Law,Laws},
+]{law}
 \declaretheorem[style=bold+qed, sibling=theorem,
 	Refname={Lemma,Lemmas},
 	refname={Lem.,Lems.},
 ]{lemma}
+\declaretheorem[style=bold+qed, sibling=lemma,
+	Refname={Proposition,Propositions},
+	refname={Prop.,Props.},
+]{proposition}
 \declaretheorem[style=bold+qed, parent=theorem,
 	Refname={Corollary,Corollaries},
 	refname={Cor.,Cors.},
 ]{corollary}
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
+	Refname={Conjecture,Conjectures},
+	refname={Conj.,Conjs.},
+]{conjecture}
 
 \let\proof\@undefined
 \declaretheorem[style=italic+qed, numbered=no]{proof}
