@@ -17,11 +17,15 @@ Contents
 ### Packages
 
 * `wfs-suite.sty`: Wraps all packages in this set.
+
    options: `(wfs-)draft`, `final`, `initial`, `nostamp`
+
 * `wfs-utils.sty`: Extends LaTeX code features and functionality.
 * `wfs-tableau.sty`: Defines tableau 10 colors.
 * `wfs-revision.sty`: For revising and adding TODOs.
+
    options: `final`, `initial`, `nostamp`
+
 * `wfs-pdf.sty`: Adds pdf features/appearance-related macros.
 * `wfs-notation.sty`: Defines default math notation.
 * `wfs-theorem.sty`: Provides environments for theorems, proofs, etc.
