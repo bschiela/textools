@@ -12,17 +12,20 @@ Contents
 ### Document classes
 
 * `wfs-notes.cls`: For taking short-form notes.
+   options: `wfs-draft`
 * `wfs-resume.cls`: For making resumes and CVs.
 
 ### Packages
 
-* `wfs-revision.sty`: For revising and adding TODOs.
-* `wfs-pdf.sty`: Adds pdf functionality and macros related to document appearance.
-* `wfs-notation.sty`: Commonly used symbols and macros for math notation.
-* `wfs-tableau.sty`: Defines tableau 10 colors.
-* `wfs-utils.sty`: Extends LaTeX code features and functionality.
 * `wfs-suite.sty`: Wraps all packages in this set.
-* `wfs-theorem.sty`: Provides environments for theorems, proofs, definitions, etc.
+   options: `draft`, `final`, `initial`, `nostamp`
+* `wfs-utils.sty`: Extends LaTeX code features and functionality.
+* `wfs-tableau.sty`: Defines tableau 10 colors.
+* `wfs-revision.sty`: For revising and adding TODOs.
+   options: `final`, `initial`, `nostamp`
+* `wfs-pdf.sty`: Adds pdf features/appearance-related macros.
+* `wfs-notation.sty`: Defines default math notation.
+* `wfs-theorem.sty`: Provides environments for theorems, proofs, etc.
 
 ### Templates
 These provide a quick starting point for new LaTeX projects.
