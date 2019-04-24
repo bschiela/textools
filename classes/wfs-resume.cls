@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wfs-resume}[2019/03/07 Initial refactor from resume.tex]
+\ProvidesClass{wfs-resume}[2019/04/24 v1.0]
 
 \LoadClass[11pt]{article} % base class
 

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wfs-notes}[2019/03/14 Initial class declaration]
+\ProvidesClass{wfs-notes}[2019/04/24 v1.0]
 
 \LoadClass[11pt]{article} % base class
 
