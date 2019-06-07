@@ -71,6 +71,9 @@
 \fancyhead[R]{\@title}
 \fancyfoot[C]{\thepage}
 
+% tables
+\renewcommand\arraystretch{1.3}
+
 % appendices
 \RequirePackage[page]{appendix}
 \BeforeBeginEnvironment{appendices}{\clearpage}
