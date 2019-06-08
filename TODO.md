@@ -3,6 +3,7 @@ To-do lists
 
 Bugs
 --------------------------------------------------------------------------------
+* [ ] QED not placed properly when thm environment ends with equation; \qedhere doesn't work (see Ashcroft & Mermin notes).
 * [ ] captions aren't justified to figure/table widths
 * [ ] theorem box background is not transparent, obscures draft watermark
 
