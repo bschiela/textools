@@ -3,6 +3,7 @@ To-do lists
 
 Bugs
 --------------------------------------------------------------------------------
+* [ ] captions aren't justified to figure/table widths
 * [ ] theorem box background is not transparent, obscures draft watermark
 
   try `thmtools`'s `prefoothook`, etc., with `mdframed`
