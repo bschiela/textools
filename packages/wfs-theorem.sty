@@ -9,6 +9,7 @@
 % implements mathtools's showonlyrefs in a cleveref-compatible way
 \RequirePackage{autonum}
 \RequirePackage{framed}
+\RequirePackage{enumitem}
 
 %%%%%%%%
 % body %
@@ -103,3 +104,11 @@
 \declaretheorem[style=italic+qed, numbered=no]{proof}
 \declaretheorem[style=italic+qed, numbered=no]{derivation}
 \declaretheorem[style=italic+qed, numbered=no]{example}
+
+% enumitem lists
+%%%%%%%%%%%%%%%%%
+\newlist{assumptions}{enumerate}{9}
+\setlist[assumptions]{label*=\arabic*.}
+
+\crefname{assumptionsi}{Asmp.}{Asmps.}
+\Crefname{assumptionsi}{Assumption}{Assumptions}
