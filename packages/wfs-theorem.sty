@@ -8,19 +8,21 @@
 \newcommand{\crefrangeconjunction}{--}
 % implements mathtools's showonlyrefs in a cleveref-compatible way
 \RequirePackage{autonum}
+\RequirePackage{framed}
 
 %%%%%%%%
 % body %
 %%%%%%%%
 \newcommand*\wfsnameref[1]{\nameref*{#1} (\hyperref[#1]{\cref*{#1}})}
 
+\Crefname{section}{Section}{Sections}
+\crefname{section}{Sec.}{Secs.}
+
+\creflabelformat{equation}{#2#1#3}
+\newcommand\pref\eqref
+
 % styles
 %%%%%%%%%%
-\declaretheoremstyle[
-	headfont=\bfseries, notefont=\bfseries, bodyfont=\normalfont,
-	headpunct=., postheadspace=0.5em,
-]{bold}
-
 \declaretheoremstyle[
 	headfont=\bfseries, notefont=\bfseries, bodyfont=\normalfont,
 	headpunct=., postheadspace=0.5em,
@@ -33,66 +35,70 @@
 	spaceabove=2ex, spacebelow=2ex, qed=\openQED,
 ]{italic+qed}
 
+\declaretheoremstyle[
+	headfont=\bfseries\itshape, notefont=\itshape, bodyfont=\normalfont,
+	headpunct=:, postheadspace=0.5em,
+	spaceabove=2ex, spacebelow=2ex, qed=\openQED,
+]{bold+italic+qed}
+
 % environments
 %%%%%%%%%%%%%%%%
 \@ifclassloaded{book}{\newcommand*\toplevel{chapter}}{}
 \@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
 \@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
 
-\Crefname{section}{Section}{Sections}
-\crefname{section}{Sec.}{Secs.}
+\newcounter{level1}
+\newcounter{level2}
+\numberwithin{level1}{\toplevel}
+\numberwithin{level2}{level1}
 
-\creflabelformat{equation}{#2#1#3}
-\newcommand\pref\eqref
-
-\declaretheorem[style=bold+qed, parent=\toplevel,
+% level 1: assumption-like
+\declaretheorem[style=bold+qed, sibling=level1,
 	Refname={Definition,Definitions},
 	refname={Def.,Defs.},
 ]{definition}
-
-\declaretheorem[style=bold+qed, parent=\toplevel,
-	Refname={Axiom,Axioms},
-	refname={Ax.,Axs.},
-]{axiom}
-\declaretheorem[style=bold+qed, sibling=axiom,
+\declaretheorem[style=bold+qed, sibling=level1,
+	Refname={Assumption,Assumptions},
+	refname={Asmp.,Asmps.},
+]{assumption}
+\declaretheorem[style=bold+qed, sibling=level1,
 	Refname={Postulate,Postulates},
 	refname={Post.,Posts.},
 ]{postulate}
-
-\declaretheorem[style=bold, parent=\toplevel,
-	shaded={
-		rulewidth=1pt, rulecolor=black, bgcolor=white,
-		textwidth=0.95\linewidth, margin=0.025\linewidth,
-	},
-	Refname={Theorem,Theorems},
-	refname={Thm.,Thms.},
-]{theorem}
-\declaretheorem[style=bold, sibling=theorem,
-	shaded={
-		rulewidth=1pt, rulecolor=black, bgcolor=white,
-		textwidth=0.95\linewidth, margin=0.025\linewidth,
-	},
-	Refname={Law,Laws},
-	refname={Law,Laws},
-]{law}
-\declaretheorem[style=bold+qed, sibling=theorem,
-	Refname={Lemma,Lemmas},
-	refname={Lem.,Lems.},
-]{lemma}
-\declaretheorem[style=bold+qed, sibling=lemma,
+\declaretheorem[style=bold+qed, sibling=level1,
+	Refname={Axiom,Axioms},
+	refname={Ax.,Axs.},
+]{axiom}
+\declaretheorem[style=bold+qed, sibling=level1,
 	Refname={Proposition,Propositions},
 	refname={Prop.,Props.},
 ]{proposition}
-\declaretheorem[style=bold+qed, parent=theorem,
-	Refname={Corollary,Corollaries},
-	refname={Cor.,Cors.},
-]{corollary}
-
-\declaretheorem[style=bold+qed, parent=\toplevel,
+\declaretheorem[style=bold+qed, sibling=level1,
 	Refname={Conjecture,Conjectures},
 	refname={Conj.,Conjs.},
 ]{conjecture}
 
+% level 1: theorem-like
+\declaretheorem[style=bold+qed, sibling=level1,
+	Refname={Theorem,Theorems},
+	refname={Thm.,Thms.},
+]{theorem}
+\declaretheorem[style=bold+qed, sibling=level1,
+	Refname={Law,Laws},
+	refname={Law,Laws},
+]{law}
+\declaretheorem[style=bold+qed, sibling=level1,
+	Refname={Lemma,Lemmas},
+	refname={Lem.,Lems.},
+]{lemma}
+
+% level 2: corollary
+\declaretheorem[style=bold+italic+qed, sibling=level2,
+	Refname={Corollary,Corollaries},
+	refname={Cor.,Cors.},
+]{corollary}
+
+% no counter
 \let\proof\@undefined
 \declaretheorem[style=italic+qed, numbered=no]{proof}
 \declaretheorem[style=italic+qed, numbered=no]{derivation}
