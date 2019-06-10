@@ -5,7 +5,6 @@ Bugs
 --------------------------------------------------------------------------------
 * [ ] See A&M notes:
     * [ ] QED not placed properly when thm environment ends with equation; \qedhere doesn't work.
-    * [ ] Floats get placed before title.
     * [ ] Generally, optimize form/function (e.g. thm environments, numbers/organization, etc.).
     * [ ] captions aren't justified to figure/table widths
 
