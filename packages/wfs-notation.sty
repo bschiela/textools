@@ -3,7 +3,7 @@
 
 \RequirePackage{physics} % e.g. Dirac notation
 \RequirePackage[version=4]{mhchem} % chemistry formulas, orbital notation
-\RequirePackage{siunitx} % units
+\RequirePackage[range-units=single, range-phrase=--]{siunitx} % units
 
 \RequirePackage{mathtools} % extends amsmath
 \RequirePackage{amssymb} % e.g. set notation
@@ -31,9 +31,16 @@
 \newcommand*\tensor  {\otimes}
 
 % proofs
-\newcommand*\defined  {\triangleq}
 \newcommand*\openQED  {\ensuremath{\openbox}}
 \newcommand*\filledQED{\ensuremath{\blacksquare}}
 \newcommand*\QED      {\openQED}
 
+% shorthand
+\newcommand*\defined  {\triangleq}
+\newcommand*\replacedby{\rightarrow}
+\newcommand*\approach{\rightarrow}
+
+% misc
 \newcommand*\mean[1]{\bar{#1}}
+\newcommand*\bigO{\mathcal{O}}
+\newcommand*\orderof[1]{\bigO{(#1)}}
