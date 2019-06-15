@@ -6,7 +6,8 @@ Bugs
 * [ ] See A&M notes:
     * [ ] QED not placed properly when thm environment ends with equation; \qedhere doesn't work.
     * [ ] Generally, optimize form/function (e.g. thm environments, numbers/organization, etc.).
-    * [ ] captions aren't justified to figure/table widths
+    * [ ] captions aren't justified to figure/table widths.
+    * [ ] links to equations go to the wrong place.
 
 Features
 --------------------------------------------------------------------------------
