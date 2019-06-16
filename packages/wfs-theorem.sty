@@ -20,8 +20,9 @@
 \crefname{section}{Sec.}{Secs.}
 
 \creflabelformat{equation}{#2#1#3}
-\newcommand\pref\eqref
+\newcommand\pref\eqref % parenthetical reference
 
+% superscript instead of 'Footnote N'
 \crefformat{footnote}{#2\footnotemark[#1]#3}
 
 % styles
@@ -50,70 +51,91 @@
 \@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
 \@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
 
+% shared counters
 \newcounter{level1}
 \newcounter{level2}
 \numberwithin{level1}{\toplevel}
 \numberwithin{level2}{level1}
 
-% level 1: assumption-like
-\declaretheorem[style=bold+qed, sibling=level1,
+
+% style=bold+qed
+
+%% assumption-like
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Definition,Definitions},
 	refname={Def.,Defs.},
 ]{definition}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Assumption,Assumptions},
 	refname={Asmp.,Asmps.},
 ]{assumption}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Postulate,Postulates},
 	refname={Post.,Posts.},
 ]{postulate}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Axiom,Axioms},
 	refname={Ax.,Axs.},
 ]{axiom}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Proposition,Propositions},
 	refname={Prop.,Props.},
 ]{proposition}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Conjecture,Conjectures},
 	refname={Conj.,Conjs.},
 ]{conjecture}
 
-% level 1: theorem-like
-\declaretheorem[style=bold+qed, sibling=level1,
+%% theorem-like
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Theorem,Theorems},
 	refname={Thm.,Thms.},
 ]{theorem}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Law,Laws},
 	refname={Law,Laws},
 ]{law}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Lemma,Lemmas},
 	refname={Lem.,Lems.},
 ]{lemma}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Expression,Expressions},
 	refname={Expr.,Exprs.},
 ]{expression}
-\declaretheorem[style=bold+qed, sibling=level1,
+
+\declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Result,Results},
 	refname={Rslt.,Rslts.},
 ]{result}
 
-% level 2: corollary
-\declaretheorem[style=bold+italic+qed, sibling=level2,
+
+% style=bold+italic+qed
+
+\declaretheorem[style=bold+italic+qed, parent=\toplevel,
 	Refname={Corollary,Corollaries},
 	refname={Cor.,Cors.},
 ]{corollary}
 
-% no counter
+
+% style=italic+qed
+
+%% proof-like
+
 \let\proof\@undefined
 \declaretheorem[style=italic+qed, numbered=no]{proof}
 \declaretheorem[style=italic+qed, numbered=no]{derivation}
-\declaretheorem[style=italic+qed, numbered=no]{example}
+\declaretheorem[style=italic+qed, numbered=no]{solution}
 
 % enumitem lists
 %%%%%%%%%%%%%%%%%
