@@ -51,13 +51,6 @@
 \@ifclassloaded{report}{\newcommand*\toplevel{chapter}}{}
 \@ifclassloaded{article}{\newcommand*\toplevel{section}}{}
 
-% shared counters
-\newcounter{level1}
-\newcounter{level2}
-\numberwithin{level1}{\toplevel}
-\numberwithin{level2}{level1}
-
-
 % style=bold+qed
 
 %% assumption-like
@@ -119,14 +112,12 @@
 	refname={Rslt.,Rslts.},
 ]{result}
 
-
 % style=bold+italic+qed
 
 \declaretheorem[style=bold+italic+qed, parent=\toplevel,
 	Refname={Corollary,Corollaries},
 	refname={Cor.,Cors.},
 ]{corollary}
-
 
 % style=italic+qed
 
