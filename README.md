@@ -94,6 +94,8 @@ New texmf roots can also be added via the
 Start > MiKTeX 2.9 > MiKTeX Console > Switch to administrator mode >
 Settings > Directories > +
 
+> With TeX Live on macOS (via MaxTeX), symlink `textools` into the local [texmf tree](http://www.tug.org/mactex/faq/index.html#qm05) at `~/Library/texmf` in the `tex/latex/` subdirectory.
+
 ### [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 This method is useful for development and version-tracking.
