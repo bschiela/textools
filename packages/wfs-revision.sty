@@ -53,8 +53,12 @@
 			{\wfs@changes@comment}%
 	}
 }{\RequirePackage{changes}}
+\RequirePackage{wfs-soulpatch}
 
 \@namedef{Changes@AuthorColor}{red} % default markup color
+
+% \hl from package soul handles line breaks in highlighted text
+\sethighlightmarkup{\sethlcolor{authorcolor!40!white}\hl{#1}}
 
 % option 'initial'
 \ifthenelse{\boolean{option@initial}}{%

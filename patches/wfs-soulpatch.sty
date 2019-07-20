@@ -1,0 +1,9 @@
+% Packages soul and xcolor both use \dimen@ as a temporary register.
+% See https://tex.stackexchange.com/a/48502
+
+% Replace the 3 occurrences of \dimen@ with \SOUL@dimen
+\RequirePackage{soul, xpatch}
+\xpatchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\xpatchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\xpatchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\newdimen\SOUL@dimen
