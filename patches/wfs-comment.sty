@@ -1,0 +1,18 @@
+% Both comment.sty and changes.sty define a \comment macro.
+
+% Use comment.sty's \comment macro only within a comment environment
+\@ifpackageloaded{changes}{
+	\let\wfs@CHANGES@comment\comment
+	\let\comment\@undefined
+	
+	\RequirePackage{comment}
+	\let\wfs@COMMENT@comment\comment
+	\let\comment\@undefined
+	
+	\RequirePackage{xifthen}
+	\newcommand\comment{%
+		\ifthenelse{\equal{\@currenvir}{comment}}
+			{\wfs@COMMENT@comment}
+			{\wfs@CHANGES@comment}%
+	}
+}{\RequirePackage{comment}}
