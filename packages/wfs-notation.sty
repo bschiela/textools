@@ -12,36 +12,34 @@
 \RequirePackage{bm} % bold math symbols (e.g. greek letters)
 \RequirePackage{nth} % 1st, 2nd, etc.
 
-% sets
+\DeclareMathOperator{\sign}{sign}
+
 \newcommand*\naturals{\mathbb{N}}
 \newcommand*\integers{\mathbb{Z}}
 \newcommand*\reals   {\mathbb{R}}
 \newcommand*\complex {\mathbb{C}}
 
-% vectors
-\renewcommand*\vec    {\bm}
-\newcommand  *\uvec[1]{\hat{#1}} % unit vectors
+\newcommand*\dotp    {\bm{\cdot}} % dot product
+\newcommand*\tensorp {\otimes} % tensor product
 
-% operators
-\newcommand*\vop[1]  {\hat{\vec{#1}}} % vector operators
-\newcommand*\hc[1]   {#1^\dag} % Hermitian conjugate
-\newcommand*\id      {\mathds{1}} % identity operator
-\newcommand*\pauli[1]{\sigma_{#1}}
-\newcommand*\paulivec{\vop{\sigma}}
-\newcommand*\tensor  {\otimes}
-\DeclareMathOperator{\sign}{sign}
+\let\arrow\vec
+\renewcommand*\vec    {\bm}            % vector
+\newcommand*  \uvec[1]{\hat{\vec{#1}}} % unit vector
+\newcommand*  \vop [1]{\vec{#1}}       % vector operator
+\newcommand*  \hc  [1]{#1^\dag}        % Hermitian conjugate
 
-% proofs
+\newcommand*\paulivec{\vop{\sigma}} % Pauli vector
+\newcommand*\pauli[1]{\sigma_{#1}}  % Pauli operator
+\newcommand*\id      {\mathds{1}}   % identity operator
+
 \newcommand*\openQED  {\ensuremath{\openbox}}
 \newcommand*\filledQED{\ensuremath{\blacksquare}}
 \newcommand*\QED      {\openQED}
 
-% shorthand
-\newcommand*\defined  {\triangleq}
-\newcommand*\replacedby{\rightarrow}
-\newcommand*\approach{\rightarrow}
-
-% misc
 \newcommand*\mean[1]{\bar{#1}}
 \newcommand*\bigO{\mathcal{O}}
+
+\newcommand*\defined   {\triangleq}
+\newcommand*\replacedby{\rightarrow}
+\newcommand*\approaches{\rightarrow}
 \newcommand*\orderof[1]{\bigO{(#1)}}
