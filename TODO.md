@@ -22,8 +22,6 @@ Features
 Miscellaneous
 -------------
 * [ ] consider [tufte-latex](https://ctan.org/pkg/tufte-latex?lang=en)
-  as a base class
+  as a base class (the narrower text block of 60-70 characters is supposedly
+  optimal)
 * [ ] Simplify `README.md` with recommended installation instructions for MiKTeX (on Windows) and TeX Live (on macOS).
-
-  the narrower text block of 60-70 characters is supposedly optimal
-
