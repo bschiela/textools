@@ -17,7 +17,9 @@ Features
    * [ ] remove colors / switch to grayscale
 * [ ] `wfs-book.cls`: For taking long-form notes / 
   For compiling many `wfs-notes.cls`s into book form
-* [ ] proper package/class documentation
+* [ ] proper package/class documentation (use .dtx and .ins)
+* [ ] option: cover page
+* [ ] option: table of contents
 
 Miscellaneous
 -------------
