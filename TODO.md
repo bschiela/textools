@@ -20,6 +20,7 @@ Features
 * [ ] proper package/class documentation (use .dtx and .ins)
 * [ ] option: cover page
 * [ ] option: table of contents
+* [ ] optional subtitle in wfs-notes.cls
 
 Miscellaneous
 -------------
