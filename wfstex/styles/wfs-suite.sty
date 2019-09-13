@@ -1,3 +1,5 @@
+% Wraps all style files in this package.
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wfs-suite}[2019/04/24 v1.0]
 
@@ -5,8 +7,9 @@
 % options %
 %%%%%%%%%%%
 
+% conditionally loads the wfs-revision package
 \newif\if@option@draft\@option@draftfalse
-\DeclareOption{wfs-draft}{\@option@drafttrue} % for global use
+\DeclareOption{wfs-draft}{\@option@drafttrue} % for inheritance from class
 \DeclareOption{draft}{\@option@drafttrue}
 
 \DeclareOption{final}{\PassOptionsToPackage{\CurrentOption}{wfs-revision}}

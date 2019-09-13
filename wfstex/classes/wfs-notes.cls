@@ -1,3 +1,5 @@
+% For taking short-form notes.
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wfs-notes}[2019/04/24 v1.0]
 

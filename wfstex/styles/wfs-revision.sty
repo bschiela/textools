@@ -1,3 +1,5 @@
+% For revising, editing, and adding TODOs.
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{wfs-revision}[2019/04/24 v1.0]
 
@@ -6,17 +8,21 @@
 %%%%%%%%%%%
 % options %
 %%%%%%%%%%%
-\DeclareOption{final}{% accept all changes to preview revised document
+
+% accept all changes to preview revised document
+\DeclareOption{final}{
 	\PassOptionsToPackage{\CurrentOption}{changes}
 	\PassOptionsToPackage{disable}{todonotes}
 	\PassOptionsToPackage{nostamp}{draftwatermark}
 }
+% reject all changes to preview unedited document
 \newboolean{option@initial}\setboolean{option@initial}{false}
-\DeclareOption{initial}{% reject all changes to preview unedited document
+\DeclareOption{initial}{
 	\setboolean{option@initial}{true}
 	\PassOptionsToPackage{disable}{todonotes}
 	\PassOptionsToPackage{nostamp}{draftwatermark}
 }
+% disable draftwatermark
 \DeclareOption{nostamp}{\PassOptionsToPackage{\CurrentOption}{draftwatermark}}
 \ProcessOptions\relax
 

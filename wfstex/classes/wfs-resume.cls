@@ -1,3 +1,5 @@
+% For making resumes and CVs.
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wfs-resume}[2019/04/24 v1.0]
 
