@@ -7,6 +7,8 @@ Bugs
     * [ ] Generally, optimize form/function (e.g. thm environments, numbers/organization, etc.).
     * [ ] captions aren't justified to figure/table widths.
     * [ ] links to equations go to the wrong place.
+* [ ] See QM1 problems:
+  * [ ] Long section names overrun the header
 
 Features / Functionality
 ------------------------
