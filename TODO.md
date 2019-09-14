@@ -21,6 +21,7 @@ Features / Functionality
   * [ ] make all maketitle params optional
 * [ ] optimize load/compile time (conditionally load packages with their
   concomitant customizations via options).
+* [ ] mouseover previews (via tooltips?)
 
 Miscellaneous
 -------------
