@@ -20,6 +20,7 @@ Features / Functionality
 * [ ] option: cover page
 * [ ] option: table of contents
 * [ ] optional subtitle in wfs-notes.cls
+  * [ ] make all maketitle params optional
 * [ ] optimize load/compile time (conditionally load packages with their
   concomitant customizations via options).
 
