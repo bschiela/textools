@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean watch
 
 BASENAME = main
 
@@ -11,3 +11,5 @@ clean:
 	latexmk -c -bibtex-cond1
 	rm -f *.loc *.soc *.tdo *.thm
 
+watch:
+	latexmk -pvc -silent $(BASENAME) > /dev/null &
