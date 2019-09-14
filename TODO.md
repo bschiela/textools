@@ -12,10 +12,6 @@ Bugs
 
 Features / Functionality
 ------------------------
-* [ ] `print` option to `wfs-suite.sty`
-   * [ ] research side effects on other packages
-     (consider global `wfs-print` analogous to `wfs-draft`)
-   * [ ] remove colors (e.g. of hyperlinks, footnote links)
 * [ ] `wfs-book.cls`: For taking long-form notes / 
   For compiling many `wfs-notes.cls`s into book form
 * [ ] proper package/class documentation (use .dtx and .ins)
