@@ -12,4 +12,4 @@ clean:
 	rm -f *.loc *.soc *.tdo *.thm
 
 watch:
-	latexmk -pvc -silent $(BASENAME) > /dev/null &
+	latexmk -silent -pvc $(BASENAME) > /dev/null &
