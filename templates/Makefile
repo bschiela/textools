@@ -1,9 +1,11 @@
 .PHONY: all clean
 
-all: main.pdf
+BASENAME = main
 
-main.pdf: main.tex
-	latexmk -pdf -silent -file-line-error -synctex=0 main
+all: $(BASENAME).pdf
+
+$(BASENAME).pdf: $(BASENAME).tex
+	latexmk -pdf -silent -file-line-error -synctex=0 $(BASENAME)
 
 clean:
 	latexmk -c -bibtex-cond1
