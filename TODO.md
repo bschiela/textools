@@ -12,6 +12,11 @@ Bugs
 
 Features / Functionality
 ------------------------
+* [ ] optimize load/compile time. options:
+  * [ ] conditionally load packages with their concomitant customizations via
+    options.
+  * [ ] load packages on per-document basis; custom package to set
+    configurations/customizations if@packageloaded
 * [ ] `wfs-book.cls`: For taking long-form notes / 
   For compiling many `wfs-notes.cls`s into book form
 * [ ] proper package/class documentation (use .dtx and .ins)
@@ -19,8 +24,6 @@ Features / Functionality
 * [ ] option: table of contents
 * [ ] optional subtitle in wfs-notes.cls
   * [ ] make all maketitle params optional
-* [ ] optimize load/compile time (conditionally load packages with their
-  concomitant customizations via options).
 * [ ] mouseover previews (via tooltips?)
 
 Miscellaneous
