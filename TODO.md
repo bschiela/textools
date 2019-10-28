@@ -17,6 +17,7 @@ Features / Functionality
     options.
   * [ ] load packages on per-document basis; custom package to set
     configurations/customizations if@packageloaded
+* [ ] twocolumn compatibility of wfs-notes.cls
 * [ ] `wfs-book.cls`: For taking long-form notes / 
   For compiling many `wfs-notes.cls`s into book form
 * [ ] proper package/class documentation (use .dtx and .ins)
