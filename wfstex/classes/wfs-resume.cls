@@ -14,7 +14,8 @@
 \RequirePackage[
 	paper=letterpaper,
 	margin=0.5in,
-	noheadfoot, nomarginpar
+	nomarginpar,
+    headheight=14pt, headsep=5pt
 ]{geometry}
 \setlength{\parskip}{-0.5pt}
 \setlength{\parindent}{0.25in}
