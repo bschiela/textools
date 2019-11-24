@@ -15,7 +15,8 @@
 	paper=letterpaper,
 	margin=0.5in,
 	nomarginpar,
-    headheight=14pt, headsep=5pt
+    headheight=14pt, headsep=5pt,
+    footskip=20pt,
 ]{geometry}
 \setlength{\parskip}{-0.5pt}
 \setlength{\parindent}{0.25in}
