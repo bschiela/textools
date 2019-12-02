@@ -3,7 +3,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wfs-resume}[2019/04/24 v1.0]
 
-\LoadClass[11pt]{article} % base class
+\LoadClass[12pt]{article} % base class
 
 % no options yet
 \DeclareOption*{\OptionNotUsed}
