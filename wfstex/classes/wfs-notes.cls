@@ -77,8 +77,8 @@
 \renewcommand\arraystretch{1.3}
 
 % appendices
-\RequirePackage[page]{appendix}
-\BeforeBeginEnvironment{appendices}{\clearpage}
+\RequirePackage[toc, page]{appendix}
+\BeforeBeginEnvironment{appendices}{\clearpage\newpage}
 
 % bibliography
 \RequirePackage[numbers, square]{natbib}
