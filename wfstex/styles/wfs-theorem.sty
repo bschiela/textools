@@ -6,7 +6,7 @@
 \RequirePackage{hyperref} % loads nameref at \begin{document}
 \RequirePackage{wfs-notation}
 \RequirePackage{amsthm, thmtools}
-\RequirePackage[capitalize, nameinlink]{cleveref}
+\RequirePackage[capitalize]{cleveref}
 \newcommand{\crefrangeconjunction}{--}
 \RequirePackage{wfs-autonum}
 \RequirePackage{framed}
@@ -15,7 +15,7 @@
 %%%%%%%%
 % body %
 %%%%%%%%
-\newcommand*\wfsnameref[1]{\nameref*{#1} (\hyperref[#1]{\cref*{#1}})}
+\newcommand*\wfsnameref[1]{\nameref*{#1} (\cref{#1})}
 
 \Crefname{section}{Section}{Sections}
 \crefname{section}{Sec.}{Secs.}
