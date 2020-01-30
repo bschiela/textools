@@ -73,6 +73,12 @@
 \fancyhead[R]{\@title}
 \fancyfoot[C]{\thepage}
 
+% section fonts
+\RequirePackage{titlesec}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
 % tables
 \renewcommand\arraystretch{1.3}
 
