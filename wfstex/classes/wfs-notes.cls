@@ -77,7 +77,7 @@
 \RequirePackage{titlesec}
 \titleformat*{\section}{\LARGE\bfseries}
 \titleformat*{\subsection}{\Large\bfseries}
-\titleformat*{\subsubsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
 
 % tables
 \renewcommand\arraystretch{1.3}
