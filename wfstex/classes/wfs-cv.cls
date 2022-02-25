@@ -1,9 +1,9 @@
 % For making resumes and CVs.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{wfs-resume}[2019/04/24 v1.0]
+\ProvidesClass{wfs-cv}[2019/04/24 v1.0]
 
-\LoadClass[11pt]{article} % base class
+\LoadClass[12pt]{article} % base class
 
 % no options yet
 \DeclareOption*{\OptionNotUsed}
@@ -14,7 +14,9 @@
 \RequirePackage[
 	paper=letterpaper,
 	margin=0.5in,
-	noheadfoot, nomarginpar
+	nomarginpar,
+    headheight=14pt, headsep=5pt,
+    footskip=20pt,
 ]{geometry}
 \setlength{\parskip}{-0.5pt}
 \setlength{\parindent}{0.25in}

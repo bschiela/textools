@@ -12,7 +12,6 @@ Bugs
 
 Features / Functionality
 ------------------------
-* [ ] refactor CV to separate docclass
 * [ ] optimize load/compile time. options:
   * [ ] conditionally load packages with their concomitant customizations via
     options.
