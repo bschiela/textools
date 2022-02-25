@@ -10,7 +10,6 @@
 \ProcessOptions\relax
 
 % page setup
-\pagestyle{empty}
 \RequirePackage[
 	paper=letterpaper,
 	margin=0.5in,
@@ -31,10 +30,10 @@
 \RequirePackage{newtxtext, newtxmath} % Times Roman font clone
 \newcommand\newfontsize[1]{\fontsize{#1}{\dimexpr#1pt*6/5}}
 \newcommand\namefont{\newfontsize{30}\bfseries}
-\newcommand\contactfont{\newfontsize{12}\selectfont}
-\newcommand\sectionfont{\newfontsize{12}\bfseries}
-\newcommand\subsectionfont{\newfontsize{11}\bfseries}
-\newcommand\subsubsectionfont{\newfontsize{11}\itshape}
+\newcommand\contactfont{\newfontsize{13}\selectfont}
+\newcommand\sectionfont{\newfontsize{14}\bfseries}
+\newcommand\subsectionfont{\newfontsize{12}\bfseries}
+\newcommand\subsubsectionfont{\newfontsize{12}\itshape}
 
 % bulleted lists
 \newcommand\bullettype{\makebox[0pt]{\large\textbullet}}
@@ -48,6 +47,18 @@
 \newcommand\address[1]{\gdef \@address {#1}}
 \newcommand\email[1]{\gdef \@email {#1}}
 \newcommand\phone[1]{\gdef \@phone {#1}}
+
+% header
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+\renewcommand\headrulewidth{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\@name}
+\fancyhf[R]{Page \thepage\ / \pageref{LastPage}}
+\fancypagestyle{firstpagestyle}{
+    \fancyhead[C]{}
+}
 
 \RequirePackage{etoolbox} % for conditional statements
 \newcommand\condvspace[2]{\ifnumcomp{#1}{>}{1}{\vspace{#2}}{}}
