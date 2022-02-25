@@ -20,7 +20,7 @@
 \setlength{\parskip}{-0.5pt}
 \setlength{\parindent}{0.25in}
 \newlength{\titlesep}
-\setlength{\titlesep}{40pt}
+\setlength{\titlesep}{20pt}
 \newlength{\secsep}
 \setlength{\secsep}{11pt}
 \newlength{\subsecsep}
@@ -44,7 +44,7 @@
 
 % personal details
 \newcommand\name[1]{\gdef \@name {#1}}
-\newcommand\address[1]{\gdef \@address {#1}}
+\newcommand\website[1]{\gdef \@website {#1}}
 \newcommand\email[1]{\gdef \@email {#1}}
 \newcommand\phone[1]{\gdef \@phone {#1}}
 
@@ -57,7 +57,7 @@
 \fancyhead[C]{\@name}
 \fancyhf[R]{Page \thepage\ / \pageref{LastPage}}
 \fancypagestyle{firstpagestyle}{
-    \fancyhead[C]{}
+    \fancyhead[CR]{}
 }
 
 \RequirePackage{etoolbox} % for conditional statements
@@ -65,12 +65,12 @@
 
 % maketitle, section, subsection, subsubsection
 \renewcommand\maketitle{
-	\noindent\begin{minipage}{4in}
+    \noindent\begin{minipage}{4in}
 		\begingroup\namefont\@name\endgroup
-	\end{minipage}\hfill\begin{minipage}{3.5in}\begin{flushright}
-			\begingroup\contactfont\@address\\\@email\\\@phone\endgroup
-	\end{flushright}\end{minipage}%
-	\vspace{\titlesep}
+    \end{minipage}\hfill\begin{minipage}{3.5in}\begin{flushright}
+			\begingroup\contactfont\@website\\\@email\\\@phone\endgroup
+	\end{flushright}\end{minipage}
+    \vspace{\titlesep}
 }
 \renewcommand\section[1]{%
 	\stepcounter{section}\setcounter{subsection}{0}%
