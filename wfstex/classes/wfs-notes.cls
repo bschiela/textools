@@ -97,6 +97,5 @@
 \newcommand{\citeayn}[1]{{\citeauthor{#1} \protect\NoHyper(\citeyear{#1}) [\citenum{#1}]\protect\endNoHyper}}
 
 % captions
-\RequirePackage{caption}
+\RequirePackage{caption,subcaption}
 \captionsetup{margin=0.05\textwidth, font=small, labelfont=bf}
-%\RequirePackage{subcaption}
