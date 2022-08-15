@@ -11,20 +11,22 @@
 
 % page setup
 \RequirePackage[
-	paper=letterpaper,
-	margin=0.5in,
-	nomarginpar,
-    headheight=14pt, headsep=5pt,
-    footskip=20pt,
+    paper=letterpaper,
+    margin=0.5in, top=0.75in, bottom=0.75in,
+    nomarginpar,
+    headheight=14pt,
+    headsep=0.25in, footskip=0.4in,
 ]{geometry}
 \setlength{\parskip}{-0.5pt}
 \setlength{\parindent}{0.25in}
+\newlength{\titlepadtop}
+\setlength{\titlepadtop}{-30pt}
 \newlength{\titlesep}
 \setlength{\titlesep}{20pt}
 \newlength{\secsep}
 \setlength{\secsep}{11pt}
 \newlength{\subsecsep}
-\setlength{\subsecsep}{5pt}
+\setlength{\subsecsep}{6pt}
 
 % font
 \RequirePackage{newtxtext, newtxmath} % Times Roman font clone
@@ -65,6 +67,7 @@
 
 % maketitle, section, subsection, subsubsection
 \renewcommand\maketitle{
+    \vspace*{\titlepadtop}
     \noindent\begin{minipage}{4in}
 		\begingroup\namefont\@name\endgroup
     \end{minipage}\hfill\begin{minipage}{3.5in}\begin{flushright}
