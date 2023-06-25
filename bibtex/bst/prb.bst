@@ -4,7 +4,7 @@
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,seq-no,nm-init,ed-au,nmlm,x5,m1,mcite,mct-1,mct-x5,yr-par,xmth,jtit-x,jttl-rm,vol-bf,volp-com,jpg-1,num-xser,pub-date,isbn,edpar,pp,xedn,nfss,')
+%% merlin.mbs  (with options: `ay,seq-no,nm-init,ed-au,nmlm,x5,m1,mcite,mct-1,mct-x5,yr-par,xmth,jtit-x,jttl-rm,vol-bf,vnum-x,volp-com,jpg-1,num-xser,pub-date,isbn,edpar,pp,xedn,nfss,')
 %% ----------------------------------------
 %% *** Bibliography style for Physical Review B. ***
 %% 
@@ -675,16 +675,6 @@ FUNCTION {format.vol.num.pages}
     }
   if$
   bolden
-  number "number" bibinfo.check duplicate$ empty$ 'skip$
-    {
-      swap$ duplicate$ empty$
-        { "there's a number but no volume in " cite$ * warning$ }
-        'skip$
-      if$
-      swap$
-      "(" swap$ * ")" *
-    }
-  if$ *
   eid empty$
     { format.journal.pages }
     { format.journal.eid }
