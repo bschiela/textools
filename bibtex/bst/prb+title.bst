@@ -1,12 +1,12 @@
 %%
-%% This is file `ndseg.bst',
+%% This is file `prb+title.bst',
 %% generated with the docstrip utility.
 %%
 %% The original source files were:
 %%
-%% merlin.mbs  (with options: `ay,seq-no,nm-init,ed-au,nmlm,x5,m1,mcite,mct-1,mct-x5,yr-par,xmth,jttl-rm,vol-bf,volp-com,jpg-1,num-xser,pub-date,isbn,edpar,pp,xedn,nfss,')
+%% merlin.mbs  (with options: `ay,seq-no,nm-init,ed-au,nmlm,x5,m1,mcite,mct-1,mct-x5,yr-par,xmth,jttl-rm,vol-bf,vnum-x,volp-com,jpg-1,num-xser,pub-date,isbn,edpar,pp,xedn,nfss,')
 %% ----------------------------------------
-%% *** Bibliography style for NDSEG research proposal. ***
+%% *** Bibliography style for Physical Review B plus titles. ***
 %% 
 %% Copyright 1994-2011 Patrick W Daly
  % ===============================================================
@@ -675,16 +675,6 @@ FUNCTION {format.vol.num.pages}
     }
   if$
   bolden
-  number "number" bibinfo.check duplicate$ empty$ 'skip$
-    {
-      swap$ duplicate$ empty$
-        { "there's a number but no volume in " cite$ * warning$ }
-        'skip$
-      if$
-      swap$
-      "(" swap$ * ")" *
-    }
-  if$ *
   eid empty$
     { format.journal.pages }
     { format.journal.eid }
@@ -1416,4 +1406,4 @@ FUNCTION {end.bib}
 EXECUTE {end.bib}
 %% End of customized bst file
 %%
-%% End of file `ndseg.bst'.
+%% End of file `prb+title.bst'.

@@ -309,7 +309,7 @@ End of customized bst file
 % vnum-nr,%: Journal vol, no. num
 % vnum-h,%: Journal vol, \# number
 % vnum-b,%: Journal vol number
-% vnum-x,%: Journal vol, without number
+  vnum-x,%: Journal vol, without number
 %--------------------
 %VOLUME PUNCTUATION:
 %   %: (def) Volume with colon
