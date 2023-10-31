@@ -80,7 +80,7 @@
 	\condvspace{\thesection}{\secsep}%
 	\noindent\begingroup%
 		\sectionfont\underline{%
-			\makebox[\linewidth][l]{\smash{#1}}%
+			\makebox[\linewidth][l]{#1}%
 		}%
 	\endgroup%
 }
