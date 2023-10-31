@@ -3,7 +3,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{wfs-cv}[2019/04/24 v1.0]
 
-\LoadClass[12pt]{article} % base class
+\LoadClass[11pt]{article} % base class
 
 % no options yet
 \DeclareOption*{\OptionNotUsed}
@@ -33,7 +33,7 @@
 \newcommand\newfontsize[1]{\fontsize{#1}{\dimexpr#1pt*6/5}}
 \newcommand\namefont{\newfontsize{30}\bfseries}
 \newcommand\contactfont{\newfontsize{13}\selectfont}
-\newcommand\sectionfont{\newfontsize{14}\bfseries}
+\newcommand\sectionfont{\newfontsize{13}\bfseries}
 \newcommand\subsectionfont{\newfontsize{12}\bfseries}
 \newcommand\subsubsectionfont{\newfontsize{12}\itshape}
 
