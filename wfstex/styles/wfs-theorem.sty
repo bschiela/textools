@@ -54,7 +54,6 @@
 
 % style=bold+qed
 
-%% problem-like
 \declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Problem,Problems},
 	refname={Prob.,Probs.},
@@ -64,8 +63,6 @@
     Refname={Example,Examples},
     refname={Ex.,Exs.},
 ]{example}
-
-%% assumption-like
 
 \declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Definition,Definitions},
@@ -97,8 +94,6 @@
 	refname={Conj.,Conjs.},
 ]{conjecture}
 
-%% theorem-like
-
 \declaretheorem[style=bold+qed, parent=\toplevel,
 	Refname={Theorem,Theorems},
 	refname={Thm.,Thms.},
@@ -114,6 +109,11 @@
 	refname={Lem.,Lems.},
 ]{lemma}
 
+\declaretheorem[style=bold+qed, parent=\toplevel,
+	Refname={Note,Notes},
+	refname={Note,Notes},
+]{note}
+
 % style=bold+italic+qed
 
 \declaretheorem[style=bold+italic+qed, parent=\toplevel,
@@ -122,8 +122,6 @@
 ]{corollary}
 
 % style=italic+qed
-
-%% proof-like
 
 \let\proof\@undefined
 \declaretheorem[style=italic+qed, numbered=no]{proof}
