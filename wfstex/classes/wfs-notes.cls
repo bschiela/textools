@@ -92,9 +92,15 @@
 \RequirePackage{xpatch} % extends etoolbox's patching commands
 \xpretocmd{\bibliography}{\pagebreak\thispagestyle{plain}}{}{}
 % cite author (year)
-\newcommand{\citeay}[1]{{\citeauthor{#1} \protect\NoHyper(\citeyear{#1})\protect\endNoHyper}}
+\newcommand{\citeay}[1]{%
+    \begin{NoHyper}\citeauthor{#1}\end{NoHyper}
+    (\citeyear{#1})%
+}
 % cite author (year) [num]
-\newcommand{\citeayn}[1]{{\citeauthor{#1} \protect\NoHyper(\citeyear{#1}) [\citenum{#1}]\protect\endNoHyper}}
+\newcommand{\citeayn}[1]{%
+    \begin{NoHyper}\citeauthor{#1} (\citeyear{#1})\end{NoHyper}
+    [\citenum{#1}]%
+}
 
 % captions
 \RequirePackage{caption,subcaption}
