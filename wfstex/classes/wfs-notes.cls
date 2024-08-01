@@ -97,9 +97,13 @@
     (\citeyear{#1})%
 }
 % cite author (year) [num]
-\newcommand{\citeayn}[1]{%
-    \begin{NoHyper}\citeauthor{#1} (\citeyear{#1})\end{NoHyper}
-    [\citenum{#1}]%
+\newcommand{\citeayn}[2][]{%
+    \begin{NoHyper}\citeauthor{#2} (\citeyear{#2})\end{NoHyper}
+    \ifstrempty{#1}{%
+        [\citenum{#2}]%
+    }{%
+        [\citenum{#2}, #1]%
+    }%
 }
 
 % captions
