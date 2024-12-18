@@ -1,7 +1,8 @@
 % Defines default math notation and convenience macros.
+% TODO deprecate as many as possible in favor of physics/physics2 package built-ins?
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{wfs-notation}[2019/04/24 v1.0]
+\ProvidesPackage{wfs-notation}[2024/11/05 v1.1]
 
 \RequirePackage{physics} % e.g. Dirac notation
 \RequirePackage[version=4]{mhchem} % chemistry formulas, orbital notation
@@ -15,9 +16,11 @@
 \RequirePackage{nth} % 1st, 2nd, etc.
 
 % math operators
-\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\sign}{sgn}
 \DeclareMathOperator*{\SPAN}{span}
 \DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\argmax}{argmax}
+\DeclareMathOperator{\argmin}{argmin}
 
 % inexact differential
 \def\dbar{{\mathchar'26\mkern-15mu \operatorname{d}}}
@@ -33,7 +36,7 @@
 \let\emptyset\varnothing
 
 % products
-\newcommand*\dotp    {\bm{\cdot}}
+\newcommand*\dotp    {\vdot}
 \newcommand*\crossp  {\cross}
 \newcommand*\tensorp {\otimes}
 
@@ -50,11 +53,13 @@
 \newcommand*\HH        {\mathcal{H}}      % Hamiltonian or Hilbert space
 \newcommand*\ZZ        {\mathcal{Z}}      % partition function
 \newcommand*\GG        {\mathcal{G}}      % group
+\newcommand*\vF        {v_\text{F}}       % Fermi velocity
+\newcommand*\muB       {\mu_\text{B}}     % Bohr magneton
 
 % vectors and operators
 \let\arrow\vec
-\renewcommand*\vec    {\bm}            % vector
-\newcommand*\uvec  [1]{\hat{\vec{#1}}} % unit vector
+\renewcommand*\vec [1]{\vb*{#1}}       % vector (from physics package)
+\newcommand*\uvec  [1]{\vu*{#1}}       % unit vector (from physics package)
 \newcommand*\vop   [1]{\vec{#1}}       % vector operator
 \newcommand*\pauli    {\sigma}         % Pauli matrix
 \newcommand*\pauliv   {\vop{\pauli}}   % Pauli vector
