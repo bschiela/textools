@@ -1,30 +1,15 @@
 % Provides environments for theorems, proofs, etc.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{wfs-theorem}[2019/04/24 v1.0]
+\ProvidesPackage{wfs-theorem}[2025/05/13 v1.1]
 
 \RequirePackage{hyperref} % loads nameref at \begin{document}
 \RequirePackage{wfs-notation}
 \RequirePackage{amsthm, thmtools}
 \RequirePackage[capitalize]{cleveref}
-\newcommand{\crefrangeconjunction}{--}
 \RequirePackage{wfs-autonum}
 \RequirePackage{framed}
 \RequirePackage[inline]{enumitem}
-
-%%%%%%%%
-% body %
-%%%%%%%%
-\newcommand*\wfsnameref[1]{\nameref*{#1} (\cref{#1})}
-
-\Crefname{section}{Section}{Sections}
-\crefname{section}{Sec.}{Secs.}
-
-\creflabelformat{equation}{#2#1#3}
-\newcommand\pref\eqref % parenthetical reference
-
-% superscript instead of 'Footnote N'
-\crefformat{footnote}{#2\footnotemark[#1]#3}
 
 % styles
 %%%%%%%%%%
