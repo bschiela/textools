@@ -21,6 +21,8 @@
 \setlength{\parindent}{0.25in}
 \newlength{\titlepadtop}
 \setlength{\titlepadtop}{-30pt}
+\newlength{\namepadtop}
+\setlength{\namepadtop}{0pt}
 \newlength{\titlesep}
 \setlength{\titlesep}{20pt}
 \newlength{\secsep}
@@ -69,7 +71,7 @@
 \renewcommand\maketitle{
     \vspace*{\titlepadtop}
     \noindent\begin{minipage}{4in}
-		\begingroup\namefont\@name\endgroup
+        \vspace{\namepadtop}\begingroup\namefont\@name\endgroup
     \end{minipage}\hfill\begin{minipage}{3.5in}\begin{flushright}
 			\begingroup\contactfont\@website\\\@email\\\@phone\endgroup
 	\end{flushright}\end{minipage}
